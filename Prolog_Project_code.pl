@@ -105,12 +105,12 @@ preferenceSatisfaction(Offer, Customer, [accommodation(X)|T], S):-
 	
 
 preferenceSatisfaction(Offer, Customer, [means(X)|T], S):-
-	offerAccommodation(Offer,A),
+	offerMean(Offer,A),
 	\+ A=X,
 	preferenceSatisfaction(Offer, Customer, T, S).
 	
 preferenceSatisfaction(Offer, Customer, [means(X)|T], S):-
-	offerAccommodation(Offer,A),
+	offerMean(Offer,A),
 	 A=X,
 	customerPreferredMean(Customer,X,S1),
 	preferenceSatisfaction(Offer, Customer, T, S2),
